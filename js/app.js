@@ -37,7 +37,10 @@ function createNavBar() {
 
 //scrolling to section clicked on NavBar
 function scrollToSections(event) {
-  event.target.scrollIntoView();
+  event.preventDefault();
+  let clickedSection = event.target.href.substr(event.target.href.lastIndexOf('#'));
+  let chosenSection = document.querySelector(clickedSection);
+  chosenSection.scrollIntoView();
 };
 
 //changing class status to active when section is visible
